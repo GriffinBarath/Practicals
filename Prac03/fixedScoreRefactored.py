@@ -4,12 +4,12 @@ def main():
     score = validateScore(score)
     print(score)
 
-def validateScore(grade):
-    if grade < 0 or grade > 100:
+def validateScore(score):
+    if score < 0 or score > 100:
         grade = "Invalid score"
-    elif grade > 90:
+    elif score > 90:
         grade = "Excellent"
-    elif grade > 50:
+    elif score > 50:
         grade = "Passable"
     else:
         grade = "Bad"
