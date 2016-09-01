@@ -2,16 +2,21 @@ import random
 
 
 def main():
-    counter = int(input("How many Quick Picks:"))
-    while counter < 1:
-        counter = input("Please enter a number greater than 0 to play!\nHow many Quick Picks?")
-    quickPicks = [1, 2, 3, 4, 5, 6, ]
-    for pick in range(counter):
-        for number in quickPicks:
-            for i in range(6):
-                quickPicks[i] = random.randint(1, 45)
-            quickPicks.sort()
-            print(number, end=" ")
+    MIN_NUMBER = 1
+    MAX_NUMBER = 45
+    NUMBERS_IN_PICK = 6
+    number_of_picks = int(input("How many Quick Picks:"))
+    while number_of_picks < 1:
+        number_of_picks = input("Please enter a number greater than 0 to play!\nHow many Quick Picks?")
+    for pick in range(number_of_picks):
+        quickPicks = []
+        for i in range(NUMBERS_IN_PICK):
+            randomNumber = random.randint(MIN_NUMBER, MAX_NUMBER)
+            while randomNumber in quickPicks:
+                randomNumber = random.randint(MIN_NUMBER, MAX_NUMBER)
+            quickPicks.append(randomNumber)
+        quickPicks.sort()
+        print(quickPicks, end=" ")
         print("")
 
 
