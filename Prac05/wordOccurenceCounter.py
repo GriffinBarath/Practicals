@@ -6,7 +6,7 @@ def main():
     seperatedSentence.sort()
     for word in seperatedSentence:
         if word not in WORD_OCCURENCES:
-            WORD_OCCURENCES[word]= 1
+            WORD_OCCURENCES[word] = 1
         else:
             WORD_OCCURENCES[word] += 1
     longestWordLength = 0
@@ -15,9 +15,7 @@ def main():
         if entryLength > longestWordLength:
             longestWordLength = len(entry)
     for entry in WORD_OCCURENCES:
-        print("{:{}} : {}".format(entry, longestWordLength, str(WORD_OCCURENCES[entry])))
+        print("{:{}} : {}".format(entry, longestWordLength, WORD_OCCURENCES[entry]))
 
 
 main()
-
-
