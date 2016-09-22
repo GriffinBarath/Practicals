@@ -30,9 +30,9 @@ def main():
 
 def chooseTaxi(taxiList):
     taxiCounter = 0
-    for choice in taxiList:
-        print("{} - {}".format(taxiCounter, choice.__str__()))
-        #print(choice.__str__())
+    for taxi in taxiList:
+        print("{} - {}".format(taxiCounter, taxi))
+        #print(taxi.__str__())
         taxiCounter += 1
     taxiChoice = int(input("Choose Taxi:"))
     while taxiChoice not in range(0, taxiCounter):
