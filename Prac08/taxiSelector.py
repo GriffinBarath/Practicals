@@ -22,6 +22,7 @@ def main():
                 print("Please choose a taxi first!")
         elif menuChoice == "q":
             loopCondition = False
+        print("Bill to date: {:.2f}".format(totalFare))
     print("Total trip cost ${:.2f}\nTaxis are now:".format(totalFare))
     for taxi in taxis:
         print(taxi)
@@ -42,14 +43,13 @@ def chooseTaxi(taxiList):
 
 
 def driveTaxi(currentTaxi, totalFare):
-    fare = 0
+    currentTaxi.start_fare
     distance = int(input("Drive how far?"))
     currentTaxi.start_fare
     currentTaxi.drive(distance)
     fare = currentTaxi.get_fare()
     totalFare = totalFare + fare
     print("Your {} trip cost you ${:.2f}".format(currentTaxi.name, fare))
-    print("Bill to date: {:.2f}".format(totalFare))
     return totalFare
 
 
