@@ -8,7 +8,7 @@ class SilverServiceTaxi(Taxi):
         """initialises a SilverServiceTaxi instance, based on parent Taxi class"""
         super().__init__(name, fuel)
         self.fanciness = fanciness
-        self.price_per_km = self.fanciness * self.price_per_km
+        self.price_per_km *= self.fanciness
         self.flagfall = 4.50
 
     def __str__(self):
